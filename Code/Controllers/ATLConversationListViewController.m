@@ -49,7 +49,7 @@ static NSString *const ATLGIFMIMETypePlaceholderText = @"Attachment: GIF";
 NSString *const ATLConversationListViewControllerTitle = @"Messages";
 NSString *const ATLConversationTableViewAccessibilityLabel = @"Conversation Table View";
 NSString *const ATLConversationTableViewAccessibilityIdentifier = @"Conversation Table View Identifier";
-NSString *const ATLConversationListViewControllerDeletionModeMyDevices = @"My Devices";
+NSString *const ATLConversationListViewControllerDeletionModeMyDevices = @"Archive";
 NSString *const ATLConversationListViewControllerDeletionModeEveryone = @"Everyone";
 
 + (instancetype)conversationListViewControllerWithLayerClient:(LYRClient *)layerClient
@@ -81,7 +81,7 @@ NSString *const ATLConversationListViewControllerDeletionModeEveryone = @"Everyo
 - (void)lyr_commonInit
 {
     _cellClass = [ATLConversationTableViewCell class];
-    _deletionModes = @[@(LYRDeletionModeMyDevices), @(LYRDeletionModeAllParticipants)];
+    _deletionModes = @[@(LYRDeletionModeMyDevices)];
     _displaysAvatarItem = NO;
     _allowsEditing = YES;
     _rowHeight = 76.0f;
