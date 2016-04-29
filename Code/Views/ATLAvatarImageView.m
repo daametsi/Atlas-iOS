@@ -201,5 +201,13 @@ NSString *const ATLAvatarImageViewAccessibilityLabel = @"ATLAvatarImageViewAcces
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self.initialsLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:3]];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self.initialsLabel attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-3]];
 }
+
+// expand uitapgesture area
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
+    CGRect frame = CGRectInset(self.bounds, -20, -20);
+    
+    return CGRectContainsPoint(frame, point) ? self : nil;
+}
     
 @end
